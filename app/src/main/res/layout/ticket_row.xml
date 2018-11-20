@@ -10,6 +10,8 @@
 
         <import type="android.view.View" />
 
+        <variable name="ticket" type="com.jimmy.rx_flat_concat_map.data.models.Ticket"/>
+
     </data>
 
 

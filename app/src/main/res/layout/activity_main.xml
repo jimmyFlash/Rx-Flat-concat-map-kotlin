@@ -30,7 +30,8 @@
         <android.support.constraint.ConstraintLayout
                      android:layout_width="match_parent"
                      android:layout_height="match_parent"
-                     android:layout_marginTop="?attr/actionBarSize">
+                     android:layout_marginTop="?attr/actionBarSize"
+                     >
 
             <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler_view"
@@ -42,6 +43,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    tools:listitem="@layout/ticket_row"
             />
 
         </android.support.constraint.ConstraintLayout>

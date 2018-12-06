@@ -11,28 +11,33 @@ import com.bumptech.glide.request.RequestOptions
 import com.jimmy.rx_flat_concat_map.data.models.Ticket
 import com.jimmy.rx_flat_concat_map.databinding.TicketRowBinding
 
+/**
+ * adapter for the ticket recyclerview
+ */
 class TicketAdapter  (private var context: Context,
                       var ticketList: ArrayList<Ticket>,
                       private var listener: OnItemClickListener) : RecyclerView.Adapter<TicketAdapter.ViewHolder>() {
 
 
-    override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
-        val layoutInflater = LayoutInflater.from(p0.context)
-        val binding = TicketRowBinding.inflate(layoutInflater, p0, false)
+    override fun onCreateViewHolder(viewGroup: ViewGroup, pos: Int): ViewHolder {
+        val layoutInflater = LayoutInflater.from(viewGroup.context)
+        // initialize data binding with the generated class from the ticket_row layout xml
+        val binding = TicketRowBinding.inflate(layoutInflater, viewGroup, false)
         // initialize the ViewHolder
         return ViewHolder(context, binding)
     }
 
 
+    // item count
     override fun getItemCount(): Int  = ticketList.size
 
     // establish data binding and click listener
     /**
      * items[position] is implementation of indexing operator. It is same as items.get(position)
      */
-    override fun onBindViewHolder(p0: ViewHolder, p1: Int){
-        var ticket : Ticket = ticketList[p1]
-        p0.bind(ticketList[p1], listener)
+    override fun onBindViewHolder(viewHolder: ViewHolder, pos: Int){
+        // calls the bind method of the VH to bind to the ui and update data
+        viewHolder.bind(ticketList[pos], listener)
     }
 
 
@@ -42,6 +47,7 @@ class TicketAdapter  (private var context: Context,
     }
 
 
+    // updated the tickets array
     fun replaceData(arrayList: ArrayList<Ticket>) {
         ticketList = arrayList
         notifyDataSetChanged()
@@ -60,6 +66,9 @@ class TicketAdapter  (private var context: Context,
         fun bind(ticket: Ticket, listener: OnItemClickListener?) {
 
             if (listener != null) {
+
+                binding.ticket = ticket
+
                 /* root(kotlin) :: getRoot(java)
                    Returns the outermost View in the layout file associated with the Binding.
                    If this binding is for a merge layout file, this will return the first root in the merge tag.

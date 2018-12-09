@@ -10,16 +10,16 @@ import com.google.gson.annotations.SerializedName
  */
 
 data class Ticket (
-    @SerializedName("flight_number")  val flightNumber: String = "dummy-flight",
-    @SerializedName("from")  val from: String = "dummy-from",
-    @SerializedName("to") val to: String = "dummy-to",
-    @SerializedName("price")  var price: Price? = null,
+    @SerializedName("flight_number")  @Bindable val flightNumber: String = "dummy-flight",
+    @SerializedName("from")  @Bindable val from: String = "dummy-from",
+    @SerializedName("to") @Bindable val to: String = "dummy-to",
+    @SerializedName("price")  @Bindable var price: Price? = null,
     @SerializedName("stops") @Bindable val numberOfStops: Int = 0,
-    @SerializedName("airline") val airline: Airline? = null,
+    @SerializedName("airline") @Bindable val airline: Airline? = null,
     @SerializedName("departure") @Bindable val departure: String = "dummy-departure",
     @SerializedName("arrival") @Bindable val arrival: String = "dummy-arrival",
-    @SerializedName("duration") val duration: String = "dummy-duration",
-    @SerializedName("instructions") val instructions: String = "dummy-instructions"):BaseObservable(){
+    @SerializedName("duration") @Bindable val duration: String = "dummy-duration",
+    @SerializedName("instructions") @Bindable val instructions: String = ""):BaseObservable(){
 
     override fun equals(other: Any?): Boolean {
         if (other === this) {

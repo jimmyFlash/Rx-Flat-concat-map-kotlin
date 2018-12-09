@@ -69,6 +69,7 @@
                                 android:textColor="@color/airline_name"
                                 android:textSize="@dimen/airline_name"
                                 android:textStyle="normal"
+                                android:text="@{ticket.airline.name}"
                                 tools:text="name"/>
                         </LinearLayout>
 
@@ -83,6 +84,7 @@
                             android:textColor="@color/colorPrimary"
                             android:textSize="@dimen/no_of_stops"
                             android:textStyle="normal"
+                            android:text="@{ticket.numberOfStops + ` Stops`}"
                             tools:text="stops"/>
 
 
@@ -121,6 +123,7 @@
                             android:textColor="@color/departure"
                             android:textSize="@dimen/departure"
                             android:textStyle="normal"
+                            android:text="@{ticket.departure + `  Dept`}"
                             tools:text="from"/>
 
 
@@ -144,6 +147,7 @@
                             android:textColor="@color/departure"
                             android:textSize="@dimen/departure"
                             android:textStyle="normal"
+                            android:text="@{ticket.arrival + `  Dest`}"
                             tools:text="to"/>
 
 
@@ -161,6 +165,7 @@
                                 android:layout_centerVertical="true"
                                 android:textColor="@color/departure"
                                 android:textSize="@dimen/price"
+                                android:text="@{ticket.price != null ? (`₹` +  String.format(`%.0f`, ticket.price.price)) : `00`}"
                                 tools:text="$$"/>
 
 
@@ -198,6 +203,7 @@
                             android:textColor="@color/duration"
                             android:textSize="@dimen/duration"
                             android:textStyle="normal"
+                            android:text="@{ticket.flightNumber + ` , ` + ticket.duration + ` ` + ticket.instructions}"
                             tools:text="duration"/>
 
 
@@ -211,6 +217,7 @@
                             android:textColor="@color/duration"
                             android:textSize="@dimen/duration"
                             android:textStyle="normal"
+                            android:text="@{ticket.price != null ?  ticket.price.seats + ` Seats` : `N/A`}"
                             tools:text="HH:mm"/>
 
                     </LinearLayout>

@@ -82,23 +82,8 @@ class TicketAdapter  (private var context: Context,
                     .apply(RequestOptions.circleCropTransform())
                     .into(binding.logo)
 
-                binding.airlineName.text = ticket.airline?.name
-                binding.departure.text = "${ticket.departure}  Dep"
-                binding.arrival.text = "${ticket.arrival}  Dest"
-
-
-                binding.duration.text = ticket.flightNumber
-                binding.duration.append(", " + ticket.duration)
-                binding.numberOfSeats.text = "${ticket.numberOfStops}  Stops"
-
-
-                if (!TextUtils.isEmpty(ticket.instructions)) {
-                    binding.duration.append(", " + ticket.instructions)
-                }
-
                 if (ticket.price != null) {
-                    binding.price.setText("₹" + String.format("%.0f", ticket.price!!.price));
-                    binding.numberOfSeats.setText(ticket.price!!.seats + " Seats");
+//
                     binding.progressBar.visibility = View.INVISIBLE
                 } else {
                     binding.progressBar.visibility = View.VISIBLE

@@ -77,19 +77,11 @@ class TicketAdapter  (private var context: Context,
                 // can replace parameter with _ if you don’t use it
                 //binding.root.setOnClickListener({ _ -> listener.onItemClick(layoutPosition) })
 
-                Glide.with(context)
-                    .load(ticket.airline?.logo)
-                    .apply(RequestOptions.circleCropTransform())
-                    .into(binding.logo)
-
                 if (ticket.price != null) {
-//
                     binding.progressBar.visibility = View.INVISIBLE
                 } else {
                     binding.progressBar.visibility = View.VISIBLE
                 }
-
-
             }
 
             /*

@@ -8,7 +8,6 @@
 
     <data>
 
-
         <import type="android.view.View" />
 
         <variable name="ticket" type="com.jimmy.rx_flat_concat_map.data.models.Ticket"/>
@@ -55,6 +54,7 @@
                                 android:layout_gravity="center_vertical"
                                 android:layout_marginEnd="@dimen/dimen_10"
                                 tools:src="@mipmap/ic_launcher"
+                                android:src ="@{ticket.airline.logo}"
 
                                 />
 
@@ -71,6 +71,7 @@
                                 android:textStyle="normal"
                                 android:text="@{ticket.airline.name}"
                                 tools:text="name"/>
+
                         </LinearLayout>
 
                         <TextView

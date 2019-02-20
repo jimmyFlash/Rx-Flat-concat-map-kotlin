@@ -181,8 +181,10 @@
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
                                     android:background="@color/colorPrimary"
-                                    android:padding="10dp"
-                                    tools:visibility="gone"
+                                    android:padding="5dp"
+                                    android:indeterminateTintMode="src_atop"
+                                    android:indeterminateTint="@android:color/holo_blue_dark"
+
 
                             />
                         </RelativeLayout>
